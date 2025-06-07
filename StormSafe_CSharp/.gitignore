@@ -1,0 +1,63 @@
+## Ignore arquivos temporários do Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Build output
+bin/
+obj/
+
+## Configurações locais do Rider, VSCode, etc
+.idea/
+.vscode/
+
+## Arquivos de publicação
+*.publish.xml
+*.pubxml
+*.pubxml.user
+
+## Logs
+*.log
+
+## Cache do NuGet
+.nuget/packages/
+
+## Arquivos de pacotes
+*.nupkg
+*.snupkg
+
+## Diretórios de teste
+TestResults/
+
+## Arquivos de configuração local
+appsettings.Development.json
+
+## Arquivos de backup
+*_Backup*/
+
+## Arquivos gerados pelo IIS Express
+/.vs/
+/IISExpress/
+
+## Arquivos de pacotes de ferramentas
+*.psess
+*.vsp
+
+## Arquivos do Visual Studio Code
+.vscode/
+
+## Outros arquivos temporários
+*.tmp
+*.temp
+*.cache
+*.dbmdl
+*.bak
+
+# Persistente
+*.pdb
+
+# Ignore Docker secrets
+secrets/
+

@@ -1,0 +1,26 @@
+@StormSafe_HostAddress = http://localhost:5159
+
+### GET todos os rios
+GET {{StormSafe_HostAddress}}/api/rio
+Accept: application/json
+
+### POST novo rio
+POST {{StormSafe_HostAddress}}/api/rio
+Content-Type: application/json
+
+{
+  "nome": "Rio Tietê"
+}
+
+### GET todos os sensores
+GET {{StormSafe_HostAddress}}/api/sensor
+Accept: application/json
+
+### POST novo sensor
+POST {{StormSafe_HostAddress}}/api/sensor
+Content-Type: application/json
+
+{
+  "tipo": "Nível da Água",
+  "rioId": 1
+}

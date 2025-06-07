@@ -1,0 +1,36 @@
+﻿
+services:
+  stormsafe-api:
+    build: .
+    container_name: stormsafe-api
+    ports:
+      - "8080:8080"  # Expondo a porta 8080 para acesso à aplicação
+    depends_on:
+      - sql-db  # Garantindo que o banco de dados inicie antes da aplicação
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - DB_CONNECTION_STRING=Server=sql-db;Database=StormSafeDB;User Id=sa;Password=Your_password123;
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/swagger/index.html"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  sql-db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sql-db
+    ports:
+      - "1433:1433"  # Porta padrão do SQL Server
+    environment:
+      - SA_PASSWORD=Your_password123  # Senha do SA (Sistema Administrador)
+      - ACCEPT_EULA=Y  # Aceitar a licença do SQL Server
+    volumes:
+      - sql_data:/var/opt/mssql  # Volume persistente para o banco de dados
+    healthcheck:
+      test: ["CMD", "ls"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  sql_data:  # Volume persistente do banco de dados
