@@ -82,3 +82,5 @@ Tipo	Link
 📽️ Demonstração	ASSISTIR AQUI
 📄 Licença
 Projeto acadêmico. Uso restrito a fins educacionais (FIAP - 2025).
+
+video: https://www.youtube.com/watch?v=t2gguN-HQhU
